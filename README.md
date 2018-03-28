@@ -18,21 +18,20 @@
 
 ### Contents
   This provides the following functionality:
-  (where `launcher` is replaced by the distro-specific name)
 
-  * `launcher`
-    - Launch the distro's default login shell.
+  * `arch`
+    - Launch default login shell.
 
-  * `launcher run <command line>`
+  * `arch run <command line>`
     - Run the given command line in that distro, using the default configuration.
     - Everything after `run ` is passed to the Linux LaunchProcess call.
 
-  * `launcher config [setting [value]]`
+  * `arch config [setting [value]]`
     - Configure certain settings for this distro.
     - Settings are any of the following (by default)
       - `--default-user <username>`: Set the default user for this distro
 
-  * `launcher help`
+  * `arch help`
     - Print the usage.
 
 ## Launcher Outline
