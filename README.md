@@ -11,6 +11,7 @@
 ## Requirements
 
 - Windows build 16215 or later
+- Enabled Windows Subsystem for Linux in Windows Features and Developer Mode in the Settings app.
 - You must have `install.tar.gz` (rootfs of Arch Linux) in your root of the project. I used [ArchWSL](https://github.com/yuk7/ArchWSL)'s rootfs.tar.gz. Download `Arch.zip` from releases, then unzip and rename `rootfs.tar.gz` to `install.tar.gz`.
 
 ### Contents
@@ -102,7 +103,7 @@ Note: If you are using Hyper-V you can use the new VM gallery to easily spin up 
 
   Also make sure to check out the [Notes for uploading to the Store](https://github.com/Microsoft/WSL-DistroLauncher/wiki/Notes-for-uploading-to-the-Store) page on our wiki for more information.
 
-# Issues & Contact
+# Issues
 Any bugs or problems discovered with the Launcher should be filed in this project's Issues list.
 
 # Contributing
