@@ -17,16 +17,16 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="mydistro" Executable="mydistro.exe" EntryPoint="Windows.FullTrustApplication">
-      <uap:VisualElements DisplayName="My Linux Distro" Description="My Own Distro Launcher" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" BackgroundColor="transparent">
+    <Application Id="mydistro" Executable="arch.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Arch Linux" Description="Arch Linux is an independently developed, x86-64 general-purpose GNU/Linux distribution that strives to provide the latest stable versions of most software by following a rolling-release model." Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
-        <uap3:Extension Category="windows.appExecutionAlias" Executable="mydistro.exe" EntryPoint="Windows.FullTrustApplication">
+        <uap3:Extension Category="windows.appExecutionAlias" Executable="arch.exe" EntryPoint="Windows.FullTrustApplication">
           <uap3:AppExecutionAlias>
-            <desktop:ExecutionAlias Alias="mydistro.exe" />
+            <desktop:ExecutionAlias Alias="arch.exe" />
           </uap3:AppExecutionAlias>
         </uap3:Extension>
       </Extensions>

@@ -7,7 +7,7 @@
 
 // This is the name of the distribution, it must only conform to the following
 // regular expression: ^[a-zA-Z0-9._-]+$
-#define DISTRIBUTION_NAME L"MyDistribution"
+#define DISTRIBUTION_NAME L"ArchLinux"
 
 // Helper class for calling WSL Functions:
 // https://msdn.microsoft.com/en-us/library/windows/desktop/mt826874(v=vs.85).aspx
@@ -39,7 +39,7 @@ HRESULT InstallDistribution()
     std::wstring userName;
     do {
         userName = Helpers::GetUserInput(MSG_ENTER_USERNAME, 32);
-        commandLine = L"/usr/sbin/adduser --quiet --gecos '' " + userName;
+        commandLine = L"useradd -m -g users -s /bin/bash " + userName;
         hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
         if (FAILED(hr)) {
             return hr;
@@ -48,7 +48,7 @@ HRESULT InstallDistribution()
     } while (exitCode != 0);
 
     // Add the user account to any relevant groups.
-    commandLine = L"/usr/sbin/usermod -aG adm,cdrom,sudo,dip,plugdev " + userName;
+    commandLine = L"/usr/sbin/usermod -aG wheel,storage,power " + userName;
     hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
     if (FAILED(hr)) {
         return hr;
