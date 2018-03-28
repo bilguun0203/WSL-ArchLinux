@@ -133,7 +133,7 @@ HRESULT SetDefaultUser(const std::wstring& userName)
 int wmain(int argc, wchar_t const *argv[])
 {
     // Update the title bar of the console window.
-    SetConsoleTitleW(L"My Distribution");
+    SetConsoleTitleW(L"Arch Linux");
 
     // Ensure that the Windows Subsystem for Linux optional component is installed.
     DWORD exitCode = 1;
