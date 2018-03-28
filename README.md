@@ -4,7 +4,9 @@
 
   To see build instructions go to [Build and Test](#build-and-test).
 
-  Read more: [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher).
+  I used [ArchWSL](https://github.com/yuk7/ArchWSL)'s `rootfs.tar.gz`. After you installed see [this](https://github.com/yuk7/ArchWSL#4-before-use-pacmanplease-initialize-keyring).
+
+  Read more about WSL-DistroLauncher: [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher).
   
   Note: This project is written in C++.
 
