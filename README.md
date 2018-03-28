@@ -1,19 +1,20 @@
-# WSL DistroLauncher Sample 
+# WSL ArchLinux
 ## Introduction 
-  This is the reference implementation for a Windows Subsystem for Linux (WSL) distribution installer application. You can use this sample project to create your own Linux distribution application that can be submitted to the Microsoft Store or sideloaded on your dev machine. 
+  This is clone of [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher) and modified to use Arch Linux as a Windows Subsystem for Linux (WSL). You can use this project to create Arch Linux application that can be submitted to the Microsoft Store or sideloaded on your dev machine.
+
+  To see build instructions go to [Build and Test](#build-and-test).
+
+  Read more: [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher).
   
   Note: This project is written in C++.
 
-  ### Goals
-  The goal of this project is to enable:
-  * Linux distribution owners to package and submit an application that runs on top of WSL to the Microsoft Store
-  * Developers to create custom Linux distributions that can be sideloaded onto their dev machine
+## Requirements
 
-### Project Status
-This project is an active repo maintained by the WSL engineering team at Microsoft.
+- Windows build 16215 or later
+- You must have `install.tar.gz` (rootfs of Arch Linux) in your root of the project. I used [ArchWSL](https://github.com/yuk7/ArchWSL)'s rootfs.tar.gz. Download `Arch.zip` from releases, then unzip and rename `rootfs.tar.gz` to `install.tar.gz`.
 
 ### Contents
-  The sample provides the following functionality:
+  This provides the following functionality:
   (where `launcher` is replaced by the distro-specific name)
 
   * `launcher`
@@ -41,39 +42,6 @@ This project is an active repo maintained by the WSL engineering team at Microso
 
 ## Project Structure
   The distro launcher is comprised of two Visual Studio projects - `launcher` and `DistroLauncher-Appx`. The `launcher` project builds the actual executable that is run when a user launches the app. The `DistroLauncher-Appx` builds the appx with all the correctly scaled resources and other dependencies for the Windows Store. Code changes will happen in the `launcher` project (under `DistroLauncher/`). Any manifest changes are going to happen in the `DistroLauncher-Appx` project (under `DistroLauncher-Appx/`). 
-
-## Getting Started
-  1. First, pick a _Name_ for your distro. WSL will use this as a key to identify this version of your distro - so please try to make it unique! **This name should not change from one version of your app to the next.**
-  Set this _name_ in `DistroLauncher.cpp`, by modifying the `DISTRIBUTION_NAME` #define.
-  2.  Modify `InstallDistribution` in `DistroLauncher.cpp` to set up the initial configuration of your distro.
-      - We have provided a sample for setting up a default user on an Ubuntu based system. This code should be modified to work appropriately on your distro.
-  3.  Add an icon (.ico) and logo (.png) to the `/images` directory. The logo will be used in the Start Menu and the taskbar for your launcher, and the icon will appear on the console window.
-      - The icon must be named `icon.ico`.
-  4. Pick the name you'd like to make this distro callable by from the command line. For the rest of the README I'll be using `mydistro` or `mydistro.exe`. **This is the name of your executable** and should be unique.
-  5. Make sure to change the name of the project in the `DistroLauncher-Appx/DistroLauncher-Appx.vcxproj` file to the name of your executable we picked in step 5. By default, the lines should look like:
-
-  ``` xml
-  <PropertyGroup Label="Globals">
-    ...
-    <ProjectName>mydistro</ProjectName>
-  </PropertyGroup>
-  ```
-
-  So, if I wanted to instead call my distro "TheBestDistroEver", I'd change this to:
-  ``` xml
-  <PropertyGroup Label="Globals">
-    ...
-    <ProjectName>TheBestDistroEver</ProjectName>
-  </PropertyGroup>
-  ```
-
-  **DO NOT** change the ProjectName of the `DistroLauncher/DistroLauncher.vcxproj` from the value `launcher`. Doing so will break the build, as the DistroLauncher-Appx project is looking for the output of this project as `launcher.exe`.
-
-  6.  Update `MyDistro.appxmanifest`. There are several properties that are in the manifest that will need to be updated with your specific values.
-      - Make sure to note the `Identity Publisher` value (by default, `"CN=DistroOwner"`). We'll need that for testing the application.
-      - Make sure that `<desktop:ExecutionAlias Alias="mydistro.exe" />` is set to something that ends in ".exe". This is the command that will be used to launch your distro from the command line and should match the executable name we picked in step 4.
-      - Make sure each of the `Executable` values match the executable name we picked in step 4.
-  7. Copy your tar.gz containing your distro into the root of the project and rename it to `install.tar.gz`.
 
 ## Build and Test
   To help building and testing the DistroLauncher project, we've included the following scripts to automate some tasks. You can either choose to use these scripts from the command line, or work directly in Visual Studio, whatever your preference is. 
@@ -135,10 +103,7 @@ Note: If you are using Hyper-V you can use the new VM gallery to easily spin up 
   Also make sure to check out the [Notes for uploading to the Store](https://github.com/Microsoft/WSL-DistroLauncher/wiki/Notes-for-uploading-to-the-Store) page on our wiki for more information.
 
 # Issues & Contact
-Any bugs or problems discovered with the Launcher should be filed in this project's Issues list. The team will be notified and will respond to the reported issue within 3 (US) working days.
-
-You may also reach out to our team alias at wslpartners@microsoft.com for questions related to submitting your app to the Microsoft Store.
+Any bugs or problems discovered with the Launcher should be filed in this project's Issues list.
 
 # Contributing
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
+Your are free to contribute.
