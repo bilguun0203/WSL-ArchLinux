@@ -9,20 +9,7 @@
   Read more about WSL-DistroLauncher: [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher).
   
   Note: This project is written in C++.
-
-## Requirements
-
-- Windows build 16215 or later
-- Enabled Windows Subsystem for Linux in Windows Features and Developer Mode in the Settings app.
-- You must have `install.tar.gz` (rootfs of Arch Linux) in your root of the project. I used [ArchWSL](https://github.com/yuk7/ArchWSL)'s rootfs.tar.gz. Download `Arch.zip` from releases, then unzip and rename `rootfs.tar.gz` to `install.tar.gz`.
-
-## Installing release
-
-1. Download `ArchLinux-....zip` from releases
-2. Extract zip file and run `Add-AppDevPackage.ps1` with powershell
-3. Accept all
-4. When finished select Arch Linux from Start or type `arch` on cmd to start
-
+  
 ### Contents
   This provides the following functionality:
 
@@ -40,6 +27,19 @@
 
   * `arch help`
     - Print the usage.
+
+## Requirements
+
+- Windows build 16215 or later
+- Enabled Windows Subsystem for Linux in Windows Features and Developer Mode in the Settings app.
+- You must have `install.tar.gz` (rootfs of Arch Linux) in your root of the project. I used [ArchWSL](https://github.com/yuk7/ArchWSL)'s rootfs.tar.gz. Download `Arch.zip` from releases, then unzip and rename `rootfs.tar.gz` to `install.tar.gz`.
+
+## Installing release
+
+1. Download `ArchLinux-....zip` from releases
+2. Extract zip file and run `Add-AppDevPackage.ps1` with powershell
+3. Accept all
+4. When finished select Arch Linux from Start or type `arch` on cmd to start
 
 ## Launcher Outline
   This is the basic flow of how the launcher code is set up.
