@@ -40,6 +40,7 @@ HRESULT InstallDistribution(bool createUser)
     if (createUser) {
         Helpers::PrintMessage(MSG_CREATE_USER_PROMPT);
         std::wstring userName;
+		
         do {
             userName = Helpers::GetUserInput(MSG_ENTER_USERNAME, 32);
 
