@@ -1,10 +1,6 @@
 # WSL ArchLinux
 ## Introduction 
-  This is clone of [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher) and modified to use Arch Linux as a Windows Subsystem for Linux (WSL). You can use this project to create Arch Linux application that can be submitted to the Microsoft Store or sideloaded on your dev machine.
-
-  To see build instructions go to [Build and Test](#build-and-test).
-
-  I used [ArchWSL](https://github.com/yuk7/ArchWSL)'s `rootfs.tar.gz`. After you installed see [this](https://github.com/yuk7/ArchWSL#4-before-use-pacmanplease-initialize-keyring).
+  This is clone of [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher) and modified to use Arch Linux as a Windows Subsystem for Linux (WSL). You can use this project to create Arch Linux application that can be submitted to the Microsoft Store or sideloaded on your dev machine. Or if you don't want to build it yourself, you can download created package (See [installation](#Installation)).
 
   Read more about WSL-DistroLauncher: [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher).
   
@@ -30,29 +26,38 @@
 
 ## Requirements
 
+### For running and building
+
 - Windows build 16215 or later
 - Enabled Windows Subsystem for Linux in Windows Features and Developer Mode in the Settings app.
-- You must have `install.tar.gz` (rootfs of Arch Linux) in your root of the project. I used [ArchWSL](https://github.com/yuk7/ArchWSL)'s rootfs.tar.gz. Download `Arch.zip` from releases, then unzip and rename `rootfs.tar.gz` to `install.tar.gz`.
 
-## Installing release
+### For building
 
-1. Download `ArchLinux-....zip` from releases
+- You must have `install.tar.gz` in your root of the project. Download latest release from [bilguun0203/ArchLinuxFS](https://github.com/bilguun0203/ArchLinuxFS/releases/latest).
+- 
+
+## Installation
+
+0. Check [requirements](#requirements)
+1. Download latest `ArchLinux-Appx_1.0.x.0.zip` from releases.
 2. Extract zip file and run `Add-AppDevPackage.ps1` with powershell
 3. Accept all
 4. When finished select Arch Linux from Start or type `arch` on cmd to start
-
-## Launcher Outline
-  This is the basic flow of how the launcher code is set up.
-
-  1.  First check if the distribution is registered. If it's not, then it is registered it with the Windows Subsystem for Linux. Registration extracts the tar.gz file that is included in your distribution appx.
-  2.  Once the distro is successfully registered, any other pre-launch setup is performed in `InstallDistribution()`. This is where distro-specific setup can be performed. As an example, the reference implementation creates a user account and sets this user account as the default for the distro.
-      - Note: This commands used to query and create user accounts are Ubuntu-specific; change as necessary to match the needs of your distro.
-  3.  Once the distro is configured, parse any other command-line arguments. The details of these arguments are described above, in the [Introduction](#Introduction).
-
-## Project Structure
-  The distro launcher is comprised of two Visual Studio projects - `launcher` and `DistroLauncher-Appx`. The `launcher` project builds the actual executable that is run when a user launches the app. The `DistroLauncher-Appx` builds the appx with all the correctly scaled resources and other dependencies for the Windows Store. Code changes will happen in the `launcher` project (under `DistroLauncher/`). Any manifest changes are going to happen in the `DistroLauncher-Appx` project (under `DistroLauncher-Appx/`). 
+5. After Installation finished you should enter your username (it can be different from your windows username).
+6. Before use pacman, initialize pacman keyring with following two commands
+```
+$ sudo pacman-key --init
+$ sudo pacman-key --populate archlinux
+```
+or if you changed your user to root, use this
+```
+$ sudo pacman-key --init
+$ sudo pacman-key --populate archlinux
+```
 
 ## Build and Test
+  _This section from Microsoft/WSL-DistroLauncher_
+  
   To help building and testing the DistroLauncher project, we've included the following scripts to automate some tasks. You can either choose to use these scripts from the command line, or work directly in Visual Studio, whatever your preference is. 
 
   **Please Note** some sideloading/deployment steps don't work if you mix and match Visual Studio and the command line for development. If you run into errors while trying to deploy your app after already deploying it once, the easiest step is usually just to uninstall the previously sideloaded version and try again. 
@@ -84,7 +89,7 @@ Note: If you are using Hyper-V you can use the new VM gallery to easily spin up 
 
   You can also easily build and deploy the distro launcher from Visual Studio. To sideload your appx on your machine for testing, all you need to do is right-click on the "Solution (DistroLauncher)" in the Solution Explorer and click "Deploy Solution". This should build the project and sideload it automatically for testing.
 
-  Note that the "Big Green Button" for running your project will likely not work. 
+  In order run your solution under the Visual Studio debugger, you will need to copy your install.tar.gz file into your output folder, for example: `x64\Debug`. **NOTE: If you have registered your distribution by this method, you will need to manually unregister it via wslconfig.exe /unregister**
 
 ### Testing
   You should now have a finished appx sideloaded on your machine for testing.
@@ -112,7 +117,7 @@ Note: If you are using Hyper-V you can use the new VM gallery to easily spin up 
   Also make sure to check out the [Notes for uploading to the Store](https://github.com/Microsoft/WSL-DistroLauncher/wiki/Notes-for-uploading-to-the-Store) page on our wiki for more information.
 
 # Issues
-Any bugs or problems discovered with the Launcher should be filed in this project's Issues list.
+Any bugs or problems discovered with the Launcher should be filed in this project's Issues list. If you discovered bugs or problems with ArchLinuxFS, that should be filed in [bilguun0203/ArchLinuxFS](https://github.com/bilguun0203/ArchLinuxFS)'s Issues list.
 
 # Contributing
 Your are free to contribute.
