@@ -1,6 +1,6 @@
 # WSL ArchLinux
 ## Introduction 
-  This is clone of [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher) and modified to use Arch Linux as a Windows Subsystem for Linux (WSL). You can use this project to create Arch Linux application that can be submitted to the Microsoft Store or sideloaded on your dev machine. Or if you don't want to build it yourself, you can download created package (See [Installation](#Installation)).
+  This is clone of [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher) and modified to use Arch Linux as a Windows Subsystem for Linux (WSL). You can use this project to create Arch Linux application that can be submitted to the Microsoft Store or sideloaded on your dev machine. Or if you don't want to build it yourself, you can download created package (See [installation](#Installation)).
 
   Read more about WSL-DistroLauncher: [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher).
   
@@ -38,7 +38,7 @@
 
 ## Installation
 
-0. Check [requirements](#Requirements)
+0. Check [requirements](#requirements)
 1. Download latest `ArchLinux-Appx_1.0.x.0.zip` from releases.
 2. Extract zip file and run `Add-AppDevPackage.ps1` with powershell
 3. Accept all
