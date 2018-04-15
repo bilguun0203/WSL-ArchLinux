@@ -77,7 +77,7 @@
   <PropertyGroup>
     <PackageCertificateKeyFile>DistroLauncher-Appx_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <AppxBundle>Always</AppxBundle>
+    <AppxBundle>Never</AppxBundle>
     <AppxBundlePlatforms>x64</AppxBundlePlatforms>
     <PackageCertificateThumbprint>AC3E64ED506D7177F596CC3FFCF76DF60BCF5A1D</PackageCertificateThumbprint>
   </PropertyGroup>
