@@ -1,4 +1,13 @@
 # WSL ArchLinux
+
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Requirements](#requirements)
+3. [Installation](#third-example)
+4. [Build and Test](#build-and-test)
+5. [Issues](#issues)
+6. [Contributing](#contributing)
+
 ## Introduction 
   This is clone of [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher) and modified to use Arch Linux as a Windows Subsystem for Linux (WSL). You can use this project to create Arch Linux application that can be submitted to the Microsoft Store or sideloaded on your dev machine. Or if you don't want to build it yourself, you can download created package (See [installation](#installation)).
 
@@ -29,20 +38,19 @@
 ### For running and building
 
 - Windows build 16215 or later
-- Enabled Windows Subsystem for Linux in Windows Features and Developer Mode in the Settings app.
+- Enable Windows Subsystem for Linux in Windows Features and Developer Mode in the Settings app.
 
 ### For building
 
-- You must have `install.tar.gz` in your root of the project. Download latest release from [bilguun0203/ArchLinuxFS](https://github.com/bilguun0203/ArchLinuxFS/releases/latest).
-- 
+- You must have `install.tar.gz` in your root of the project. Download [latest release](https://github.com/bilguun0203/ArchLinuxFS/releases/latest) from [bilguun0203/ArchLinuxFS](https://github.com/bilguun0203/ArchLinuxFS).
 
 ## Installation
 
 0. Check [requirements](#requirements)
-1. Download latest `ArchLinux-Appx_1.0.x.0.zip` from releases.
+1. Download latest `ArchLinux-Appx_1.0.x.0_x64.zip` from releases.
 2. Extract zip file and run `Add-AppDevPackage.ps1` with powershell
 3. Accept all
-4. When finished select Arch Linux from Start or type `arch` on cmd to start
+4. When finished select Arch Linux from Start menu or type `arch` on cmd to start
 5. After Installation finished you should enter your username (it can be different from your windows username).
 6. Before use pacman, initialize pacman keyring with following two commands
 ```
@@ -51,7 +59,7 @@ $ sudo pacman-key --populate archlinux
 ```
 or if you changed your user to root, use this
 ```
-# sudo pacman-key --init
+# pacman-key --init
 # pacman-key --populate archlinux
 ```
 
@@ -116,8 +124,8 @@ Note: If you are using Hyper-V you can use the new VM gallery to easily spin up 
 
   Also make sure to check out the [Notes for uploading to the Store](https://github.com/Microsoft/WSL-DistroLauncher/wiki/Notes-for-uploading-to-the-Store) page on our wiki for more information.
 
-# Issues
+## Issues
 Any bugs or problems discovered with the Launcher should be filed in this project's Issues list. If you discovered bugs or problems with ArchLinuxFS, that should be filed in [bilguun0203/ArchLinuxFS](https://github.com/bilguun0203/ArchLinuxFS)'s Issues list.
 
-# Contributing
+## Contributing
 Your are free to contribute.
