@@ -3,7 +3,7 @@
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Requirements](#requirements)
-3. [Installation](#third-example)
+3. [Installation](#installation)
 4. [Build and Test](#build-and-test)
 5. [Issues](#issues)
 6. [Contributing](#contributing)
