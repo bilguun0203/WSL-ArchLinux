@@ -20,7 +20,7 @@ steps:
 - task: DownloadGitHubRelease@0
   inputs:
     connection: 'bilguun0203'
-    userRepository: 'ArchLinuxFS'
+    userRepository: 'bilguun0203/ArchLinuxFS'
     defaultVersionType: 'latest'
     #downloadPath: '$(System.ArtifactsDirectory)' 
 
