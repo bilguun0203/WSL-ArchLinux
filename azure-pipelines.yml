@@ -17,10 +17,12 @@ variables:
 
 steps:
 
-- task: DownloadFileshareArtifacts@1
+- task: DownloadGitHubRelease@0
   inputs:
-    filesharePath: 'https://github.com/bilguun0203/ArchLinuxFS/releases/latest/download/'
-    artifactName: 'install.tar.gz'
+    connection: 'bilguun0203'
+    userRepository: 'ArchLinuxFS'
+    defaultVersionType: 'latest' # Options: latest, specificVersion, specificTag
+    #downloadPath: '$(System.ArtifactsDirectory)' 
 
 - task: NuGetToolInstaller@0
 
