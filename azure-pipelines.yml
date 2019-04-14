@@ -22,7 +22,7 @@ steps:
     connection: 'bilguun0203'
     userRepository: 'bilguun0203/ArchLinuxFS'
     defaultVersionType: 'latest'
-    #downloadPath: '$(System.ArtifactsDirectory)' 
+    downloadPath: '$(Build.Repository.LocalPath)' 
 
 - task: NuGetToolInstaller@0
 
