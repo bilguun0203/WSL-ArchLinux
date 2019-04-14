@@ -21,7 +21,7 @@ steps:
   inputs:
     filesharePath: 'https://github.com/bilguun0203/ArchLinuxFS/releases/latest/download/install.tar.gz'
     artifactName: 'install.tar.gz'
-    downloadPath: '.\'
+    downloadPath: '$(Build.Repository.LocalPath)'
 
 - task: NuGetToolInstaller@0
 
