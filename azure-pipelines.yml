@@ -19,7 +19,7 @@ steps:
 
 - task: DownloadFileshareArtifacts@1
   inputs:
-    filesharePath: 'https://github.com/bilguun0203/ArchLinuxFS/releases/latest/download/install.tar.gz'
+    filesharePath: 'https://github.com/bilguun0203/ArchLinuxFS/releases/latest/download/'
     artifactName: 'install.tar.gz'
     downloadPath: '$(Build.Repository.LocalPath)'
 
