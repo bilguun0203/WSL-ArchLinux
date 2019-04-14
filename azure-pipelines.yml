@@ -21,7 +21,7 @@ steps:
   inputs:
     connection: 'bilguun0203'
     userRepository: 'ArchLinuxFS'
-    defaultVersionType: 'latest' # Options: latest, specificVersion, specificTag
+    defaultVersionType: 'latest'
     #downloadPath: '$(System.ArtifactsDirectory)' 
 
 - task: NuGetToolInstaller@0
