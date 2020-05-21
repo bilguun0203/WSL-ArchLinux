@@ -150,8 +150,16 @@
     <AppxManifest Include="Arch.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\x64\install.tar.gz" />
     <None Include="DistroLauncher-Appx_TemporaryKey.pfx" />
-    <None Include="..\install.tar.gz" />
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="DistroLauncher-Appx_StoreKey.pfx" />
+    <None Include="cert.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="$(targetname)" />
